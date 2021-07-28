@@ -16,7 +16,7 @@ async function checkFile() {
   const fileUri = FileSystem.documentDirectory + 'fortunes.json'
   const {exists} = await FileSystem.getInfoAsync(fileUri)
   if (!exists) {
-    console.warn('File doesnt exist, creating a new file')
+    console.log('Populating data for first time app load')
     await FileSystem.writeAsStringAsync(fileUri, JSON.stringify(fortuneList.fortunes))
   }
 }
